@@ -1,0 +1,12 @@
+<job-types>
+	<job-type>
+		<job-type-name>job-type-concat</job-type-name>
+		<description>concatenates property values together</description>
+		<impl-class>com.hexastax.jobrunner.job.impl.ConcatenateValues</impl-class>
+	</job-type>
+	<job-type>
+		<job-type-name>job-type-reverse</job-type-name>
+		<description>prints property values in reverse order</description>
+		<impl-class>com.hexastax.jobrunner.job.impl.ReverseValues</impl-class>
+	</job-type>
+</job-types>
