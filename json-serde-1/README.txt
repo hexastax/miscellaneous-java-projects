@@ -17,8 +17,8 @@ TODO: DataType: what about collections and maps?
 TODO: Document: presumably, either JsonSerialize/JsonDeserialize or @JsonTypeInfo (how?)
 TODO: Document.deserializeWithType? Need to figure out if this is needed and if so, is this the right implementation.
 TODO: General: when using ObjectMapper at serialization or deserialization, anything to set on it??
-TODO: JsonDocumentSerializer: need to figure out if this is needed and if so, is this the right implementation of the method?	JsonDocumentSerializer.java	/json-serde-1/src/main/java/com/hexastax/jsonserde1/doc	line 73	Java Task
-TODO: Message deser: readValue(Document.class) - want to read as Message, not Document (high priority)	MessageTest.java	/json-serde-1/src/test/java/com/hexastax/jsonserde1/model	line 30	Java Task
+TODO: JsonDocumentSerializer: need to figure out if this is needed and if so, is this the right implementation of the method?
+TODO: Message deser: readValue(Document.class) - want to read as Message, not Document (high priority)
 TODO: Message deser: readValue(Document.class) - want to read as Message, not Document (low priority)	MessageTest.java	/json-serde-1/src/test/java/com/hexastax/jsonserde1/model	line 35	Java Task
 TODO: Message deser: readValue(Message.class) - want to read as Message, not Document (low priority)	MessageTest.java	/json-serde-1/src/test/java/com/hexastax/jsonserde1/model	line 40	Java Task
 TODO: Message: presumably, either JsonSerialize/JsonDeserialize on Document or @JsonTypeInfo (how?)	Message.java	/json-serde-1/src/main/java/com/hexastax/jsonserde1/model	line 9	Java Task
