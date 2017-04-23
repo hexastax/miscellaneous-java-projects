@@ -5,7 +5,7 @@ import java.util.Date;
 /**
  * Holds the list of supported data types.
  */
-public enum DataType {
+public enum DataType1 {
 
 	// TODO: DataType: can we avoid maintaining a hardcoded list of data types and all the special data type handling??
 	// TODO: DataType: how do we handle a "random" object?
@@ -32,7 +32,7 @@ public enum DataType {
 	
 	private String typeName;
 	
-	private DataType(String typeName) {
+	private DataType1(String typeName) {
 		this.typeName = typeName;
 	}
 	
@@ -40,8 +40,8 @@ public enum DataType {
 		return typeName;
 	}
 	
-	public static DataType fromExternal(String strValue) {
-		for (DataType dataType : values()) {
+	public static DataType1 fromExternal(String strValue) {
+		for (DataType1 dataType : values()) {
 			if (dataType.getValue().equals(strValue)) {
 				return dataType;
 			}
@@ -49,8 +49,8 @@ public enum DataType {
 		throw new IllegalArgumentException("No matching data type for " + strValue);
 	}
 	
-	public static DataType fromObjectValue(Object value) {
-		DataType type = null;
+	public static DataType1 fromObjectValue(Object value) {
+		DataType1 type = null;
 		
 		// ick ...
 		
@@ -59,11 +59,11 @@ public enum DataType {
 		} else if (value instanceof String) {
 			type = STRING;
 		} else if (value instanceof Boolean) {
-			type = DataType.BOOLEAN;
+			type = DataType1.BOOLEAN;
 		} else if (value instanceof Integer) {
-			type = DataType.INTEGER;
+			type = DataType1.INTEGER;
 		} else if (value instanceof Long) {
-			type = DataType.LONG;
+			type = DataType1.LONG;
 		} else if (value instanceof Float) {
 			type = FLOAT;
 		} else if (value instanceof Double) {
@@ -74,7 +74,7 @@ public enum DataType {
 			type = DOM;
 		} else if (value instanceof byte[]) {
 			type = BINARY;
-		} else if (value instanceof Document) {
+		} else if (value instanceof Document1) {
 			type = DOCUMENT;
 		} else {
 			throw new IllegalArgumentException("No matching data type for " + value.getClass().getName());

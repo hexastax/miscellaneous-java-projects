@@ -16,11 +16,6 @@ TODO: DataType: how do we handle a "random" object?
 TODO: DataType: what about collections and maps?
 TODO: Document: presumably, either JsonSerialize/JsonDeserialize or @JsonTypeInfo (how?)
 TODO: Document.deserializeWithType? Need to figure out if this is needed and if so, is this the right implementation.
-TODO: General: when using ObjectMapper at serialization or deserialization, anything to set on it??
-TODO: JsonDocumentSerializer: need to figure out if this is needed and if so, is this the right implementation of the method?
-TODO: Message deser: readValue(Document.class) - want to read as Message, not Document (high priority)
-TODO: Message deser: readValue(Document.class) - want to read as Message, not Document (low priority)
-TODO: Message deser: readValue(Message.class) - want to read as Message, not Document (low priority)
-TODO: Message: presumably, either JsonSerialize/JsonDeserialize on Document or @JsonTypeInfo (how?)
+
 
 

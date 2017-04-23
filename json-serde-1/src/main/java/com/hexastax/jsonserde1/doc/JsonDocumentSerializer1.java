@@ -8,12 +8,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.jsontype.TypeSerializer;
-import com.hexastax.jsonserde1.utils.MyUtils;
+import com.hexastax.jsonserde1.utils.MyUtils1;
 
-public class JsonDocumentSerializer extends JsonSerializer<Document> {
+public class JsonDocumentSerializer1 extends JsonSerializer<Document1> {
 
 	@Override
-	public void serialize(Document doc, JsonGenerator jgen, SerializerProvider provider)
+	public void serialize(Document1 doc, JsonGenerator jgen, SerializerProvider provider)
 			throws IOException, JsonProcessingException {
 
 		// jgen.writeStartObject();
@@ -23,7 +23,7 @@ public class JsonDocumentSerializer extends JsonSerializer<Document> {
 
 		for (String fieldName : doc.getFieldNames()) {
 			List<Object> fieldValues = doc.getFieldValues(fieldName);
-			DataType dataType = getDataType(fieldValues);
+			DataType1 dataType = getDataType(fieldValues);
 
 			jgen.writeStartObject();
 
@@ -50,7 +50,7 @@ public class JsonDocumentSerializer extends JsonSerializer<Document> {
 	}
 
 	// The cumbersome dance to ascertain the data type for a list of values ...
-	private static DataType getDataType(List<Object> values) {
+	private static DataType1 getDataType(List<Object> values) {
 		Object val = null;
 		for (Object value : values) {
 			if (value != null) {
@@ -58,12 +58,12 @@ public class JsonDocumentSerializer extends JsonSerializer<Document> {
 				break;
 			}
 		}
-		return DataType.fromObjectValue(val);
+		return DataType1.fromObjectValue(val);
 	}
 
 	private void serializeValue(JsonGenerator jgen, SerializerProvider provider, Object value) throws IOException {
 		if (value instanceof org.dom4j.Document) {
-			jgen.writeString(MyUtils.toCompactString((org.dom4j.Document) value));
+			jgen.writeString(MyUtils1.toCompactString((org.dom4j.Document) value));
 		} else {
 			jgen.writeObject(value);
 		}
@@ -73,7 +73,7 @@ public class JsonDocumentSerializer extends JsonSerializer<Document> {
 	 * TODO: JsonDocumentSerializer: need to figure out if this is needed and if so, is this the right implementation of the method?
 	 */
 	@Override
-	public void serializeWithType(Document value, JsonGenerator gen, SerializerProvider serializers,
+	public void serializeWithType(Document1 value, JsonGenerator gen, SerializerProvider serializers,
 			TypeSerializer typeSer) throws IOException {
 		typeSer.writeTypePrefixForObject(value, gen);
 		serialize(value, gen, serializers);

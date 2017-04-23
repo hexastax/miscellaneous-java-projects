@@ -1,4 +1,4 @@
-package com.hexastax.jsonserde1.doc;
+package com.hexastax.jsonserde2.doc;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -6,8 +6,6 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
@@ -21,14 +19,13 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  */
 
 // TODO: Document: presumably, either JsonSerialize/JsonDeserialize or @JsonTypeInfo (how?)
-@JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = As.WRAPPER_OBJECT)
-@JsonSerialize(using = JsonDocumentSerializer.class)
-@JsonDeserialize(using = JsonDocumentDeserializer.class)
+@JsonSerialize(using = JsonDocumentSerializer2.class)
+@JsonDeserialize(using = JsonDocumentDeserializer2.class)
 //
 // NOTE: we cannot have any JsonSubType annotations here!
 // Document is generic and needs to stay unaware of its subclasses
 //
-public class Document {
+public class Document2 {
 
 	private String id;
 	private Map<String, List<Object>> fieldMap = new LinkedHashMap<>();
@@ -37,10 +34,10 @@ public class Document {
 		return fieldMap;
 	}
 
-	public Document() {
+	public Document2() {
 	}
 
-	public Document(String id) {
+	public Document2(String id) {
 		this.id = id;
 	}
 

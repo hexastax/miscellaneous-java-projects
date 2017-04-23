@@ -1,4 +1,4 @@
-package com.hexastax.jsonserde1.utils;
+package com.hexastax.jsonserde2.utils;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -11,9 +11,9 @@ import java.util.Date;
 import org.dom4j.io.OutputFormat;
 import org.dom4j.io.XMLWriter;
 
-import com.hexastax.jsonserde1.doc.Document;
+import com.hexastax.jsonserde2.doc.Document2;
 
-public class MyUtils {
+public class MyUtils2 {
 
 	private static final SimpleDateFormat DF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	
@@ -32,7 +32,7 @@ public class MyUtils {
 		return sw.toString();
 	}
 	
-	public static void printDocument (Document doc, PrintStream out) {
+	public static void printDocument (Document2 doc, PrintStream out) {
 		out.println("\n>> DOCUMENT:");
 		out.println(">> ID: " + doc.getId());
 		

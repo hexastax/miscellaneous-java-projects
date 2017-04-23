@@ -17,18 +17,18 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class JsonDocumentDeserializer extends JsonDeserializer<Document> {
+public class JsonDocumentDeserializer1 extends JsonDeserializer<Document1> {
 
 	@Override
-	public Document deserialize(JsonParser jp, DeserializationContext ctxt)
+	public Document1 deserialize(JsonParser jp, DeserializationContext ctxt)
 			throws IOException, JsonProcessingException {
 		ObjectCodec oc = jp.getCodec();
 		JsonNode node = oc.readTree(jp);
 		return doDeserialize(jp, ctxt, node);
 	}
 
-	private Document doDeserialize(JsonParser jp, DeserializationContext ctxt, JsonNode node) throws IOException {
-		Document doc = new Document();
+	private Document1 doDeserialize(JsonParser jp, DeserializationContext ctxt, JsonNode node) throws IOException {
+		Document1 doc = new Document1();
 
 		for (Iterator<Map.Entry<String, JsonNode>> iter = node.fields(); iter.hasNext();) {
 			Map.Entry<String, JsonNode> entry = iter.next();
@@ -66,9 +66,9 @@ public class JsonDocumentDeserializer extends JsonDeserializer<Document> {
 		return doc;
 	}
 
-	private void deserializeFieldValues(JsonParser jp, DeserializationContext ctxt, Document doc, String fieldName,
+	private void deserializeFieldValues(JsonParser jp, DeserializationContext ctxt, Document1 doc, String fieldName,
 			String dataType, JsonNode fieldValuesNode) throws IOException, DocumentException {
-		DataType dt = DataType.fromExternal(dataType);
+		DataType1 dt = DataType1.fromExternal(dataType);
 		switch (dt) {
 		case STRING:
 			doc.setField(fieldName, getStringValues(fieldValuesNode));
@@ -180,8 +180,8 @@ public class JsonDocumentDeserializer extends JsonDeserializer<Document> {
 		return values;
 	}
 
-	private List<Document> getDocumentValues(JsonParser jp, DeserializationContext ctxt, JsonNode fieldValuesNode) throws IOException {
-		List<Document> values = new ArrayList<>();
+	private List<Document1> getDocumentValues(JsonParser jp, DeserializationContext ctxt, JsonNode fieldValuesNode) throws IOException {
+		List<Document1> values = new ArrayList<>();
 		for (JsonNode el : fieldValuesNode) {
 			values.add(doDeserialize(jp, ctxt, el));
 		}

@@ -8,9 +8,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo.As;
  */
 // TODO: Message: presumably, either JsonSerialize/JsonDeserialize on Document or @JsonTypeInfo (how?)
 @JsonTypeInfo(use = JsonTypeInfo.Id.CLASS, include = As.WRAPPER_OBJECT)
-public class Message extends Resource {
+public class Message1 extends Resource1 {
 
-	public Message(String id) {
+	public Message1(String id) {
 		super(id);
 	}
 

@@ -9,7 +9,7 @@ import org.junit.Test;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class DocumentTest {
+public class Document1Test {
 
 	// NOTE:
 	// With the custom Document serializer/deserializer, we get a nice JSON structure like so:
@@ -60,7 +60,7 @@ public class DocumentTest {
 	
 	@Test
 	public void testDocumentJsonSerde() throws JsonProcessingException, DocumentException {
-		Document doc = new Document("123");
+		Document1 doc = new Document1("123");
 		doc.setField("aaa", "bbb");
 		doc.setField("ccc", 12);
 		doc.setField("dateField", new Date());
